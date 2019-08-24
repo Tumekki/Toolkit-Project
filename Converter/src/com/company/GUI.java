@@ -32,7 +32,7 @@ public class GUI extends JFrame{
         JComboBox temperatures = new JComboBox(temperatureChoices);
         temperatures.setSelectedIndex(0);
 
-        temperatures.setMaximumSize(new Dimension(150,40));
+        temperatures.setMaximumSize(new Dimension(150,20));
 
         JLabel label1 = new JLabel("Celsius");
         label1.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -69,6 +69,11 @@ public class GUI extends JFrame{
                     String temp = toConvert.getText();
                     newConverter.setConvertable(Double.parseDouble(temp));
                     double temp2 = newConverter.toFahrenheit(newConverter.getConvertable());
+                    converted.setText(Double.toString(temp2));
+                } else if(temperatures.getSelectedItem() == "Fahrenheit to Celsius"){
+                    String temp = toConvert.getText();
+                    newConverter.setConvertable(Double.parseDouble(temp));
+                    double temp2 = newConverter.toCelsius(newConverter.getConvertable());
                     converted.setText(Double.toString(temp2));
                 }
             }

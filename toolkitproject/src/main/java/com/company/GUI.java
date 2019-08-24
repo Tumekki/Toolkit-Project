@@ -62,16 +62,17 @@ public class GUI extends JFrame{
         });
 
         //Add functionality to the "=" button.
+        //With the replacements on lines 70 and 75, the user can now separate the decimals either with a dot or a comma.
         convert.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(temperatures.getSelectedItem() == "Celsius to Fahrenheit"){
-                    String temp = toConvert.getText();
+                    String temp = toConvert.getText().replace(",",".");
                     newConverter.setConvertable(Double.parseDouble(temp));
                     double temp2 = newConverter.toFahrenheit(newConverter.getConvertable());
                     converted.setText(Double.toString(temp2));
                 } else if(temperatures.getSelectedItem() == "Fahrenheit to Celsius"){
-                    String temp = toConvert.getText();
+                    String temp = toConvert.getText().replace(",",".");
                     newConverter.setConvertable(Double.parseDouble(temp));
                     double temp2 = newConverter.toCelsius(newConverter.getConvertable());
                     converted.setText(Double.toString(temp2));

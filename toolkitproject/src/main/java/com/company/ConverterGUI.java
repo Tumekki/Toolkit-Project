@@ -20,7 +20,7 @@ public class ConverterGUI extends JFrame{
         this.setLocation(xPos, yPos);
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setTitle("Toolkit");
+        this.setTitle("Temperature Converter");
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));

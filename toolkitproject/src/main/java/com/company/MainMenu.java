@@ -26,6 +26,7 @@ public class MainMenu extends JFrame {
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
         JLabel mainLabel = new JLabel("Main Menu");
 
+        //tempConverter opens the GUI for converting temperatures
         JButton tempConverter = new JButton("Temperature Converter");
         tempConverter.addActionListener(new ActionListener() {
             @Override
@@ -35,13 +36,27 @@ public class MainMenu extends JFrame {
             }
         });
 
+        //JButton that opens the calculator window and closes the current one
+        JButton calculator = new JButton("Calculator");
+        calculator.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CalculatorGUI gui = new CalculatorGUI();
+                dispose();
+            }
+        });
+        //Set the components to align in the center
         mainLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         tempConverter.setAlignmentX(Component.CENTER_ALIGNMENT);
+        calculator.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+        //Add the components and spaces between into main JPanel
         mainPanel.add(Box.createRigidArea(new Dimension(0,30)));
         mainPanel.add(mainLabel);
         mainPanel.add(Box.createRigidArea(new Dimension(0,30)));
         mainPanel.add(tempConverter);
+        mainPanel.add(Box.createRigidArea(new Dimension(0,30)));
+        mainPanel.add(calculator);
         this.add(mainPanel);
         this.setVisible(true);
     }

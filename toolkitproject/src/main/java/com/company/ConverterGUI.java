@@ -2,14 +2,12 @@ package com.company;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import javax.swing.*;
-import javax.swing.border.Border;
 
+public class ConverterGUI extends JFrame{
 
-
-public class GUI extends JFrame{
-
-    public GUI(){
+    public ConverterGUI(){
         Converter newConverter = new Converter();
 
         this.setSize(800,400);
@@ -46,6 +44,9 @@ public class GUI extends JFrame{
         JTextField converted = new JTextField();
         converted.setMaximumSize(new Dimension(150,20));
 
+        JButton back = new JButton("Back");
+        back.setAlignmentX(Component.CENTER_ALIGNMENT);
+
         //Add a listener to the option box so that the celsius and fahrenheit labels swap places depending on
         //the converted and convertable
         temperatures.addActionListener(new ActionListener() {
@@ -62,25 +63,40 @@ public class GUI extends JFrame{
         });
 
         //Add functionality to the "=" button.
-        //With the replacements on lines 70 and 75, the user can now separate the decimals either with a dot or a comma.
+        //With the replacements on lines 67 and 76, the user can now separate the decimals either with a dot or a comma.
+        //A pop-up will appear if the user tries to convert an empty field
         convert.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(temperatures.getSelectedItem() == "Celsius to Fahrenheit"){
                     String temp = toConvert.getText().replace(",",".");
-                    newConverter.setConvertable(Double.parseDouble(temp));
-                    double temp2 = newConverter.toFahrenheit(newConverter.getConvertable());
-                    converted.setText(Double.toString(temp2));
+                    if(temp != null && !temp.isEmpty()){
+                        newConverter.setConvertable(Double.parseDouble(temp));
+                        double temp2 = newConverter.toFahrenheit(newConverter.getConvertable());
+                        converted.setText(String.format("%.2f", temp2));
+                    } else{
+                        JOptionPane.showMessageDialog(null, "Please enter a number to convert.");
+                    }
                 } else if(temperatures.getSelectedItem() == "Fahrenheit to Celsius"){
                     String temp = toConvert.getText().replace(",",".");
-                    newConverter.setConvertable(Double.parseDouble(temp));
-                    double temp2 = newConverter.toCelsius(newConverter.getConvertable());
-                    converted.setText(Double.toString(temp2));
+                    if(temp != null && !temp.isEmpty()) {
+                        newConverter.setConvertable(Double.parseDouble(temp));
+                        double temp2 = newConverter.toCelsius(newConverter.getConvertable());
+                        converted.setText(String.format("%.2f", temp2));
+                    } else{
+                        JOptionPane.showMessageDialog(null, "Please enter a number to convert.");
+                    }
                 }
             }
         });
 
-
+        back.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MainMenu menu = new MainMenu();
+                dispose();
+            }
+        });
         mainLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         convert.setAlignmentX(Component.CENTER_ALIGNMENT);
         mainPanel.add(Box.createRigidArea(new Dimension(0,15)));
@@ -97,10 +113,9 @@ public class GUI extends JFrame{
         mainPanel.add(label2);
         mainPanel.add(converted);
         mainPanel.add(Box.createRigidArea(new Dimension(0,30)));
+        mainPanel.add(back);
 
         this.add(mainPanel);
         this.setVisible(true);
-
-
     }
 }

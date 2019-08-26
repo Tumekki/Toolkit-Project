@@ -6,7 +6,7 @@ import java.awt.*;
 public class CalculatorGUI extends JFrame {
     public CalculatorGUI(){
 
-            this.setSize(400,400);
+            this.setSize(400,300);
             this.setLocationRelativeTo(null);
             Toolkit tk = Toolkit.getDefaultToolkit();
             Dimension dim = tk.getScreenSize();
@@ -22,15 +22,13 @@ public class CalculatorGUI extends JFrame {
         JPanel mainPanel = new JPanel();
         JTextField numField = new JTextField();
         numField.setHorizontalAlignment(JTextField.RIGHT);
-        numField.setPreferredSize(new Dimension(250,30));
-        numField.setMaximumSize(new Dimension(250,30));
-
+        numField.setPreferredSize(new Dimension(300,30));
+        numField.setMaximumSize(new Dimension(300,30));
 
         JTextField answerField = new JTextField();
         answerField.setHorizontalAlignment(JTextField.RIGHT);
-        answerField.setPreferredSize(new Dimension(250,20));
-        answerField.setMaximumSize(new Dimension(250,30));
-
+        answerField.setPreferredSize(new Dimension(300,30));
+        answerField.setMaximumSize(new Dimension(300,30));
 
         JPanel pane = new JPanel(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
@@ -38,26 +36,37 @@ public class CalculatorGUI extends JFrame {
         pane.setLayout(new GridBagLayout());
 
 
-        button = new JButton("1");
+        button = new JButton("7");
 
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
         pane.add(button, c);
+        button.setFont(new Font("Arial", Font.PLAIN, 20));
 
-        button = new JButton("2");
+        button = new JButton("8");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.5;
         c.gridx = 1;
         c.gridy = 0;
         pane.add(button, c);
+        button.setFont(new Font("Arial", Font.PLAIN, 20));
 
-        button = new JButton("3");
+        button = new JButton("9");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.5;
         c.gridx = 2;
         c.gridy = 0;
         pane.add(button, c);
+        button.setFont(new Font("Arial", Font.PLAIN, 20));
+
+        button = new JButton("+");
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.weightx = 0.5;
+        c.gridx = 3;
+        c.gridy = 0;
+        pane.add(button, c);
+        button.setFont(new Font("Arial", Font.PLAIN, 20));
 
         button = new JButton("4");
 
@@ -65,6 +74,7 @@ public class CalculatorGUI extends JFrame {
         c.gridx = 0;
         c.gridy = 1;
         pane.add(button, c);
+        button.setFont(new Font("Arial", Font.PLAIN, 20));
 
         button = new JButton("5");
         c.fill = GridBagConstraints.HORIZONTAL;
@@ -72,6 +82,7 @@ public class CalculatorGUI extends JFrame {
         c.gridx = 1;
         c.gridy = 1;
         pane.add(button, c);
+        button.setFont(new Font("Arial", Font.PLAIN, 20));
 
         button = new JButton("6");
         c.fill = GridBagConstraints.HORIZONTAL;
@@ -79,27 +90,79 @@ public class CalculatorGUI extends JFrame {
         c.gridx = 2;
         c.gridy = 1;
         pane.add(button, c);
+        button.setFont(new Font("Arial", Font.PLAIN, 20));
 
-        button = new JButton("7");
+        button = new JButton("-");
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.weightx = 0.5;
+        c.gridx = 3;
+        c.gridy = 1;
+        pane.add(button, c);
+        button.setFont(new Font("Arial", Font.PLAIN, 20));
+
+        button = new JButton("1");
 
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 2;
         pane.add(button, c);
+        button.setFont(new Font("Arial", Font.PLAIN, 20));
 
-        button = new JButton("8");
+        button = new JButton("2");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.5;
         c.gridx = 1;
         c.gridy = 2;
         pane.add(button, c);
+        button.setFont(new Font("Arial", Font.PLAIN, 20));
 
-        button = new JButton("9");
+        button = new JButton("3");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.5;
         c.gridx = 2;
         c.gridy = 2;
         pane.add(button, c);
+        button.setFont(new Font("Arial", Font.PLAIN, 20));
+
+        button = new JButton("x");
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.weightx = 0.5;
+        c.gridx = 3;
+        c.gridy = 2;
+        pane.add(button, c);
+        button.setFont(new Font("Arial", Font.PLAIN, 20));
+
+        button = new JButton("0");
+
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridx = 0;
+        c.gridy = 3;
+        pane.add(button, c);
+        button.setFont(new Font("Arial", Font.PLAIN, 20));
+
+        button = new JButton(".");
+
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridx = 1;
+        c.gridy = 3;
+        pane.add(button, c);
+        button.setFont(new Font("Arial", Font.PLAIN, 20));
+
+        button = new JButton("=");
+
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridx = 2;
+        c.gridy = 3;
+        pane.add(button, c);
+        button.setFont(new Font("Arial", Font.PLAIN, 20));
+
+        button = new JButton("%");
+
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridx = 3;
+        c.gridy = 3;
+        pane.add(button, c);
+        button.setFont(new Font("Arial", Font.PLAIN, 20));
 
 
 
@@ -107,8 +170,7 @@ public class CalculatorGUI extends JFrame {
         numPanel.setLayout(new BoxLayout(numPanel, BoxLayout.PAGE_AXIS));
         numPanel.add(numField);
         numPanel.add(answerField);
-        //mainPanel.add(numField);
-        //mainPanel.add(answerField);
+
 
         JPanel container = new JPanel();
         container.setLayout(new BoxLayout(container, BoxLayout.PAGE_AXIS));

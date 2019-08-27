@@ -97,8 +97,11 @@ public class CalculatorGUI extends JFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                calc.setNum1(Double.parseDouble(calc.getCalculation()));
                 calc.setCalculation(calc.getCalculation().concat("+"));
                 numField.setText(calc.getCalculation());
+                calc.setCalculation("");
+                calc.setOperator("+");
             }
         });
 
@@ -157,8 +160,11 @@ public class CalculatorGUI extends JFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                calc.setNum1(Double.parseDouble(calc.getCalculation()));
                 calc.setCalculation(calc.getCalculation().concat("-"));
                 numField.setText(calc.getCalculation());
+                calc.setCalculation("");
+                calc.setOperator("-");
             }
         });
 
@@ -217,8 +223,11 @@ public class CalculatorGUI extends JFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                calc.setNum1(Double.parseDouble(calc.getCalculation()));
                 calc.setCalculation(calc.getCalculation().concat("x"));
                 numField.setText(calc.getCalculation());
+                calc.setCalculation("");
+                calc.setOperator("x");
             }
         });
 
@@ -262,8 +271,10 @@ public class CalculatorGUI extends JFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                calc.setCalculation(calc.getCalculation().concat("="));
-                numField.setText(calc.getCalculation());
+                calc.setNum2(Double.parseDouble(calc.getCalculation()));
+                double temp = calc.calculate(calc.getNum1(), calc.getNum2());
+                calc.setResult(Double.toString(temp));
+                answerField.setText(calc.getResult());
             }
         });
 
@@ -277,8 +288,11 @@ public class CalculatorGUI extends JFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                calc.setNum1(Double.parseDouble(calc.getCalculation()));
                 calc.setCalculation(calc.getCalculation().concat("%"));
                 numField.setText(calc.getCalculation());
+                calc.setCalculation("");
+                calc.setOperator("%");
             }
         });
 
@@ -294,6 +308,8 @@ public class CalculatorGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 calc.setCalculation("");
                 numField.setText(calc.getCalculation());
+                calc.setResult("");
+                answerField.setText(calc.getResult());
             }
         });
 

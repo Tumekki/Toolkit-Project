@@ -25,6 +25,7 @@ public class MainMenu extends JFrame {
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
         JLabel mainLabel = new JLabel("Main Menu");
+        mainLabel.setFont(new Font("Arial", Font.PLAIN, 20));
 
         //tempConverter opens the GUI for converting temperatures
         JButton tempConverter = new JButton("Temperature Converter");
@@ -35,6 +36,7 @@ public class MainMenu extends JFrame {
                 dispose();
             }
         });
+        tempConverter.setFont(new Font("Arial", Font.PLAIN, 20));
 
         //JButton that opens the calculator window and closes the current one
         JButton calculator = new JButton("Calculator");
@@ -45,6 +47,8 @@ public class MainMenu extends JFrame {
                 dispose();
             }
         });
+        calculator.setFont(new Font("Arial", Font.PLAIN, 20));
+
         //Set the components to align in the center
         mainLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         tempConverter.setAlignmentX(Component.CENTER_ALIGNMENT);

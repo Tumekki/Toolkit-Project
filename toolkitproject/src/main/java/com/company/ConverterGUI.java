@@ -2,9 +2,12 @@ package com.company;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
 import javax.swing.*;
 
+/*
+ * ConverterGUI sets up the graphical user interface for the temperature converter.
+ * The functions and variables are located in the Converter class. A new Converter object is made in the constructor.
+ */
 public class ConverterGUI extends JFrame{
 
     public ConverterGUI(){
@@ -90,6 +93,7 @@ public class ConverterGUI extends JFrame{
             }
         });
 
+        //clicking back closes the current frame and goes back to main menu
         back.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -99,13 +103,14 @@ public class ConverterGUI extends JFrame{
         });
         mainLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         convert.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        //Add the components into the main JPanel
         mainPanel.add(Box.createRigidArea(new Dimension(0,15)));
         mainPanel.add(mainLabel);
         mainPanel.add(Box.createRigidArea(new Dimension(0,30)));
         mainPanel.add(temperatures);
         mainPanel.add(Box.createRigidArea(new Dimension(0,30)));
         mainPanel.add(label1);
-
         mainPanel.add(toConvert);
         mainPanel.add(Box.createRigidArea(new Dimension(0,10)));
         mainPanel.add(convert);
@@ -114,7 +119,6 @@ public class ConverterGUI extends JFrame{
         mainPanel.add(converted);
         mainPanel.add(Box.createRigidArea(new Dimension(0,30)));
         mainPanel.add(back);
-
         this.add(mainPanel);
         this.setVisible(true);
     }

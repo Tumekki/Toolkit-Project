@@ -6,12 +6,15 @@ public class Calculator {
         calculation = "";
     }
 
-    private String calculation;
-    private String result;
-    private double num1;
-    private double num2;
-    private String operator;
+    private String calculation;     //calculation stores the user's input in a string format
+    private String result;          //result stores the result of the calculation in a string format
+    private double num1;            //num1 holds the number on the left side of the operator
+    private double num2;            //num2 holds the number on the right side of the operator
+    private String operator;        //a flag variable that changes depending on which operator the user clicks
+                                    //it's used by the calculate() function to do the right operations on the num1 & num2 variables
 
+    //Takes in as parameters the numbers stored in num1 & num2 variables and operates on them depending on the
+    //operator flag.
     public double calculate(double num1, double num2){
         switch(operator) {
             case "+":
@@ -27,6 +30,7 @@ public class Calculator {
         }
     }
 
+    //Getters and setters
     public String getOperator() {
         return operator;
     }
@@ -51,8 +55,6 @@ public class Calculator {
         this.result = result;
     }
 
-
-
     public double getNum1() {
         return num1;
     }
@@ -61,8 +63,6 @@ public class Calculator {
         this.num1 = num1;
     }
 
-
-
     public double getNum2() {
         return num2;
     }
@@ -70,6 +70,4 @@ public class Calculator {
     public void setNum2(double num2) {
         this.num2 = num2;
     }
-
-
 }

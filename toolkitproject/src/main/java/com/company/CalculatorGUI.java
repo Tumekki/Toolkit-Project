@@ -24,13 +24,15 @@ public class CalculatorGUI extends JFrame {
 
 
         JPanel mainPanel = new JPanel();
+
+        //numField is the textfield that displays the user's input
         JTextField numField = new JTextField();
         numField.setHorizontalAlignment(JTextField.RIGHT);
         numField.setPreferredSize(new Dimension(300,30));
         numField.setMaximumSize(new Dimension(300,30));
 
 
-
+        //answerField is the textfield that will show the answer once '=' is clicked
         JTextField answerField = new JTextField();
         answerField.setHorizontalAlignment(JTextField.RIGHT);
         answerField.setPreferredSize(new Dimension(300,30));
@@ -41,7 +43,7 @@ public class CalculatorGUI extends JFrame {
         JButton button;
         pane.setLayout(new GridBagLayout());
 
-
+        //Buttons for numbers and operators in a gridbag layout
         button = new JButton("7");
 
         c.fill = GridBagConstraints.HORIZONTAL;
@@ -314,7 +316,6 @@ public class CalculatorGUI extends JFrame {
         });
 
 
-
         JPanel numPanel = new JPanel();
         numPanel.setLayout(new BoxLayout(numPanel, BoxLayout.PAGE_AXIS));
         numPanel.add(numField);
@@ -331,5 +332,3 @@ public class CalculatorGUI extends JFrame {
         this.setVisible(true);
         }
     }
-
-

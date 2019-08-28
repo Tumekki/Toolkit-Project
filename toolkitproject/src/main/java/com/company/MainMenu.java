@@ -8,8 +8,6 @@ import java.awt.event.ActionListener;
 public class MainMenu extends JFrame {
 
     public MainMenu(){
-
-
         this.setSize(800,400);
         this.setLocationRelativeTo(null);
         Toolkit tk = Toolkit.getDefaultToolkit();

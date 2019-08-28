@@ -315,6 +315,21 @@ public class CalculatorGUI extends JFrame {
             }
         });
 
+        button = new JButton("Back");
+
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridx = 3;
+        c.gridy = 4;
+        pane.add(button, c);
+        button.setFont(new Font("Arial", Font.PLAIN, 20));
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MainMenu menu = new MainMenu();
+                dispose();
+            }
+        });
+
 
         JPanel numPanel = new JPanel();
         numPanel.setLayout(new BoxLayout(numPanel, BoxLayout.PAGE_AXIS));

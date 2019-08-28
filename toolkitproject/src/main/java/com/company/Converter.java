@@ -1,5 +1,6 @@
 package com.company;
 
+//Methods and variables for converting temperatures
 public class Converter {
     //Getter and setter for convertable
     public double getConvertable() {

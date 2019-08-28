@@ -36,6 +36,16 @@ public class MainMenu extends JFrame {
         });
         tempConverter.setFont(new Font("Arial", Font.PLAIN, 20));
 
+        JButton weightConverter = new JButton("Weight Converter");
+        weightConverter.setFont(new Font("Arial", Font.PLAIN, 20));
+        weightConverter.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                WeightConverterGUI gui = new WeightConverterGUI();
+                dispose();
+            }
+        });
+
         //JButton that opens the calculator window and closes the current one
         JButton calculator = new JButton("Calculator");
         calculator.addActionListener(new ActionListener() {
@@ -50,6 +60,7 @@ public class MainMenu extends JFrame {
         //Set the components to align in the center
         mainLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         tempConverter.setAlignmentX(Component.CENTER_ALIGNMENT);
+        weightConverter.setAlignmentX(Component.CENTER_ALIGNMENT);
         calculator.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         //Add the components and spaces between into main JPanel
@@ -57,6 +68,8 @@ public class MainMenu extends JFrame {
         mainPanel.add(mainLabel);
         mainPanel.add(Box.createRigidArea(new Dimension(0,30)));
         mainPanel.add(tempConverter);
+        mainPanel.add(Box.createRigidArea(new Dimension(0,30)));
+        mainPanel.add(weightConverter);
         mainPanel.add(Box.createRigidArea(new Dimension(0,30)));
         mainPanel.add(calculator);
         this.add(mainPanel);

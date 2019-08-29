@@ -2,6 +2,8 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class WeightConverterGUI extends JFrame{
     public WeightConverterGUI(){
@@ -26,7 +28,7 @@ public class WeightConverterGUI extends JFrame{
         leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.PAGE_AXIS));
         rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.PAGE_AXIS));
 
-        JTextField leftInput = new JTextField("left");
+        JTextField leftInput = new JTextField("");
         leftInput.setHorizontalAlignment(JTextField.RIGHT);
         String[] weightChoices = {"Kilogram", "Pound", "Stone", "Ounce"};
         JComboBox leftTypes = new JComboBox(weightChoices);
@@ -34,7 +36,7 @@ public class WeightConverterGUI extends JFrame{
         leftPanel.add(leftInput);
         leftPanel.add(leftTypes);
 
-        JTextField rightInput = new JTextField("right");
+        JTextField rightInput = new JTextField("");
         rightInput.setHorizontalAlignment(JTextField.RIGHT);
         String[] weightChoices2 = {"Kilogram", "Pound", "Stone", "Ounce"};
         JComboBox rightTypes = new JComboBox(weightChoices2);
@@ -42,8 +44,31 @@ public class WeightConverterGUI extends JFrame{
         rightPanel.add(rightInput);
         rightPanel.add(rightTypes);
 
-        JLabel equals = new JLabel("=");
+
+        JButton equals = new JButton("=");
         equals.setFont(new Font("Arial", Font.PLAIN, 20));
+        equals.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(leftTypes.getSelectedItem() == "Kilogram"){
+                    if(rightTypes.getSelectedItem() == "Kilogram"){
+                        rightInput.setText(leftInput.getText());
+                    } else if(rightTypes.getSelectedItem() == "Pound"){
+                        double temp = Double.parseDouble(leftInput.getText());
+                        temp *= 2.205;
+                        rightInput.setText(String.format("%.2f", temp));
+                    } else if(rightTypes.getSelectedItem() == "Stone"){
+                        double temp = Double.parseDouble(leftInput.getText());
+                        temp /= 6.35;
+                        rightInput.setText(String.format("%.2f", temp));
+                    } else if(rightTypes.getSelectedItem() == "Ounce"){
+                        double temp = Double.parseDouble(leftInput.getText());
+                        temp *= 35.274;
+                        rightInput.setText(String.format("%.2f", temp));
+                    }
+                }
+            }
+        });
 
         mainPanel.add(Box.createRigidArea(new Dimension(0,30)));
         mainPanel.add(leftPanel);

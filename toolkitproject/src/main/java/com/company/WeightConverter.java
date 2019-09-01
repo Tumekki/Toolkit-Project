@@ -3,6 +3,8 @@ package com.company;
 public class WeightConverter {
 
     private double convertable;
+    private double converted;
+
 
     //Getters and setters
     public double getConvertable() {
@@ -13,7 +15,9 @@ public class WeightConverter {
         this.convertable = convertable;
     }
 
+    public double getConverted() { return converted; }
 
+    public void setConverted(double converted) { this.converted = converted; }
 
 
 

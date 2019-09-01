@@ -18,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -59,7 +59,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.WeightConverterGUITest.test">
     <configuration name="ConverterTest.test" type="AndroidJUnit" temporary="true" nameIsGenerated="true">
       <module name="toolkitproject" />
       <extension name="coverage">
@@ -113,8 +113,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WeightConverterGUITest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="toolkitproject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company" />
+      <option name="MAIN_CLASS_NAME" value="com.company.WeightConverterGUITest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WeightConverterGUITest.test" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Android JUnit.ConverterTest.test" />
         <item itemvalue="JUnit.All in toolkitproject" />

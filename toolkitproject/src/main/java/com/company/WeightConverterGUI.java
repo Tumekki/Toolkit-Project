@@ -66,6 +66,55 @@ public class WeightConverterGUI extends JFrame{
                         temp *= 35.274;
                         rightInput.setText(String.format("%.2f", temp));
                     }
+                } else if(leftTypes.getSelectedItem() == "Pound"){
+                    if(rightTypes.getSelectedItem() == "Kilogram"){
+                        double temp = Double.parseDouble(leftInput.getText());
+                        temp /= 2.205;
+                        rightInput.setText(String.format("%.2f", temp));
+                    } else if(rightTypes.getSelectedItem() == "Pound"){
+                        rightInput.setText(leftInput.getText());
+                    }else if(rightTypes.getSelectedItem() == "Stone"){
+                        double temp = Double.parseDouble(leftInput.getText());
+                        temp /= 14;
+                        rightInput.setText(String.format("%.2f", temp));
+                    }else if(rightTypes.getSelectedItem() == "Ounce"){
+                        double temp = Double.parseDouble(leftInput.getText());
+                        temp *= 16;
+                        rightInput.setText(String.format("%.2f", temp));
+                    }
+
+                } else if(leftTypes.getSelectedItem() == "Stone"){
+                    if(rightTypes.getSelectedItem() == "Kilogram"){
+                        double temp = Double.parseDouble(leftInput.getText());
+                        temp *= 6.35;
+                        rightInput.setText(String.format("%.2f", temp));
+                    }else if(rightTypes.getSelectedItem() == "Pound"){
+                        double temp = Double.parseDouble(leftInput.getText());
+                        temp *= 14.0;
+                        rightInput.setText(String.format("%.2f", temp));
+                    }else if(rightTypes.getSelectedItem() == "Stone"){
+                        rightInput.setText(leftInput.getText());
+                    }else if(rightTypes.getSelectedItem() == "Ounce"){
+                        double temp = Double.parseDouble(leftInput.getText());
+                        temp *= 224;
+                        rightInput.setText(String.format("%.2f", temp));
+                    }
+                } else if(leftTypes.getSelectedItem() == "Ounce"){
+                    if(rightTypes.getSelectedItem() == "Kilogram"){
+                        double temp = Double.parseDouble(leftInput.getText());
+                        temp /= 35.274;
+                        rightInput.setText(String.format("%.2f", temp));
+                    }else if(rightTypes.getSelectedItem() == "Pound"){
+                        double temp = Double.parseDouble(leftInput.getText());
+                        temp /= 16.0;
+                        rightInput.setText(String.format("%.2f", temp));
+                    }else if(rightTypes.getSelectedItem() == "Stone"){
+                        double temp = Double.parseDouble(leftInput.getText());
+                        temp /= 224.0;
+                        rightInput.setText(String.format("%.2f", temp));
+                    }else if(rightTypes.getSelectedItem() == "Ounce"){
+                        rightInput.setText(leftInput.getText());
+                    }
                 }
             }
         });
